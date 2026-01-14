@@ -11,10 +11,10 @@ const app = Vue.createApp({
         outputGoal() {
             const randomNumber = Math.random();
             if(randomNumber < 0.5) {
-                return 'Master Vue!'
+                return '<h1>Master Vue!</h1>'
             } 
             else {
-                return 'Deep dive into Vue!'
+                return '<h1>Deep dive into Vue!</h1>'
             }
         },
         variableFunction() {
