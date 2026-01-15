@@ -20,11 +20,15 @@
       <h2>Events in Action</h2>
       <button v-on:click="counter++">Add1</button>
       <button v-on:click="addCounter(5)">Add 5</button>
-      <button v-on:click="counter--">Reduce1</button>
+      <button v-on:click.right="counter--">Reduce1</button>
       <button v-on:click="reduceCounter(5)">Reduce 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Purgat')">
-      <p>{{ name }}</p>
+      <input type="text" v-on:input="setName($event, 'Purgat')" v-on:keyup.enter="confirmName">
+      <p>{{ confirmedName}}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign In</button>
+      </form>
     </section>
   </body>
 </html>
