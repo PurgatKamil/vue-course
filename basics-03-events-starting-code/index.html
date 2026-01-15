@@ -23,6 +23,8 @@
       <button v-on:click="counter--">Reduce1</button>
       <button v-on:click="reduceCounter(5)">Reduce 5</button>
       <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName($event, 'Purgat')">
+      <p>{{ name }}</p>
     </section>
   </body>
 </html>
