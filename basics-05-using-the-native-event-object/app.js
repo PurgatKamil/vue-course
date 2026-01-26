@@ -2,15 +2,27 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      lastName: '',
+      fullName2: '',
     };
   },
-  computed: { //use it as data property,, not like function
+  watch: {  //can only watch 1 dependency
+    name(value) { //automatically gets value of data property, can also get previous value
+      this.fullName2 = value + " Purgat"
+    },
+    counter(value) {
+      if(value > 50) {
+        this.counter = 0;
+      }
+    }
+  },
+  computed: { //use it as data property,, not like function. Can "watch" as many dependencied as is used in it
     fullname() {
       if (this.name === "") {
         return "";
       }
-      return this.name + " " + "Purgat";
+      return this.name + " " + this.lastName;
     }
   },
   methods: {
